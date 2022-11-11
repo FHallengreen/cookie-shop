@@ -9,11 +9,22 @@ public class Basket {
         this.cookieList = cookieList;
     }
 
+    public void addCookie(Cookie cookie){
+        cookieList.add(cookie);
+    }
+
     public List<Cookie> getCookieList() {
         return cookieList;
     }
 
     public void setCookieList(List<Cookie> cookieList) {
         this.cookieList = cookieList;
+    }
+
+    @Override
+    public String toString() {
+        return "Basket{" +
+                "cookieList=" + cookieList +
+                '}';
     }
 }
