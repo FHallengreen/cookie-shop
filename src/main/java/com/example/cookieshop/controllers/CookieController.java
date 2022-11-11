@@ -41,7 +41,6 @@ public class CookieController {
         return "shop";
     }
 
-
     @GetMapping("/addToBasket")
     public String add(@RequestParam int id, HttpSession session) {
         Cookie cookie = repo.getCookieById(id);
@@ -55,6 +54,12 @@ public class CookieController {
         session.setAttribute("basket", basket);
         System.out.println(session.getAttribute("basket"));
         return "redirect:/basket";
+    }
+
+    @GetMapping("/invalidate")
+    public String invalidate(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
     }
 
 
