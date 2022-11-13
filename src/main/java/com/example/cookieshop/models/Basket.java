@@ -21,6 +21,14 @@ public class Basket {
         this.cookieList = cookieList;
     }
 
+    public int getBasketTotal(){
+        int total = 0;
+        for (Cookie cookie: getCookieList()) {
+            total += cookie.getPrice();
+        }
+        return total;
+    }
+
     @Override
     public String toString() {
         return "Basket{" +

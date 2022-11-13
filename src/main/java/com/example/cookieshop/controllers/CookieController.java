@@ -31,7 +31,7 @@ public class CookieController {
             basket = new Basket(new ArrayList<>());
             session.setAttribute("basket", basket);
         }
-        System.out.println(session.getAttribute("basket"));
+
         return "basket";
     }
 
@@ -52,14 +52,13 @@ public class CookieController {
         cookies.add(cookie);
         basket.setCookieList(cookies);
         session.setAttribute("basket", basket);
-        System.out.println(session.getAttribute("basket"));
         return "redirect:/basket";
     }
 
     @GetMapping("/invalidate")
     public String invalidate(HttpSession session){
         session.invalidate();
-        return "redirect:/";
+        return "redirect:/basket";
     }
 
 

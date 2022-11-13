@@ -14,9 +14,18 @@
         </nav>
 
         <tr th:each="cookie : ${session.basket.getCookieList()}">
+            <br>
             <td th:text="${cookie.name}"></td>
             <td th:text="${cookie.price}"></td>
         </tr>
+
+        <br>
+        <div>Total cost: </div>
+        <span th:text="${session.basket.getBasketTotal()}"></span>
+
+        <form action="http://localhost:8080/invalidate">
+            <button >Ryd bestilling</button>
+        </form>
     </div>
 </body>
 </html>
